@@ -24,5 +24,5 @@ def check ():
 choice()
 
 #while x == 0 :
-    choice()
-    check()
+    #choice()
+    #check()
