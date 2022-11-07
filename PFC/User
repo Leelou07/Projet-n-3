@@ -15,13 +15,20 @@ class user :
         if answer_verif == "O" :
             return answer
         else :
+            print("Choisissez un nouveau pseudo")
             self.__pseudo()
 
     def __choice(self):
         print("Les coups possibles sont :", choices)
         answer = input("Quel est votre coup ?")
-        return answer
+        if answer in choices :
+            True 
+            print("Votre coup est :", answer)
+            return answer
+        else : 
+            print("Votre coup n'existe pas !")
+            self.__choice()
 
 
 joueur = user()
-print(joueur.player_1)
+
