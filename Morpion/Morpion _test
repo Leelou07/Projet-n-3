@@ -1,0 +1,99 @@
+board = [
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+]
+
+class Profils :
+    def __init__(self):
+        self.modes = ["JvsJ", "JvsIa", "IavsIa"] #Liste des modes
+        self.mode_selection = self.__mode()
+        self.mode_verification = self.__mode_verif()
+
+    '''
+    Choix du mode de jeu 
+    '''
+    def __mode(self):
+        print("Choississez votre mode de jeu en tapant le nom correspondant")
+        answer = input(self.modes)
+        print("Le mode de jeu séléctionné est", answer, ".")
+        answer_verif = input("Etês-vous sûr, O/N")
+
+        if answer_verif == "O" :
+            return answer
+        else :
+            print("Choisissez un nouveau mode")
+            self.__mode()        
+
+    '''
+    Orientation du choix du mode de jeu 
+    '''
+
+    def __mode_verif(self):
+            if self.mode_selection == "JvsJ" :
+                 player_1 = self.pseudo() 
+                 player_2 = self.pseudo()
+                 print("la partie oppose", player_1, "à", player_2, ".")
+            '''
+            elif self.mode_selection == "JvsIa" :
+                player_1 = self.pseudo()
+                player_2 = #Ia
+                print("la partie oppose", player_1, "à", player_2, ".")
+
+
+            else :
+                player_1 = #Ia
+                player_2 = #Ia
+                print("la partie oppose", player_1, "à", player_2, ".")
+            '''
+    '''
+    Choix du Pseudo
+    '''
+    def pseudo(self):
+        answer = input("Quel est votre pseudo ?")
+        print("Votre pseudo est :", answer, ".")
+        answer_verif = input("Voulez vous utilisez ce pseudo ? O/N")
+        
+        if answer_verif == "O" :
+            return answer
+        else :
+            print("Choisissez un nouveau pseudo")
+            self.__pseudo()
+
+class Verification :
+    def __init__(self):
+        self.win = self.win_conditions()
+        self.win = self.win_verification()
+
+    def win_conditions(self, player) :
+        if (board [0][0] == player and board [1][1] == player and board [2][0] == player ) :
+            return(True)
+        elif (board [2][0] == player and board [1][1] == player and board [0][2] == player ) :
+            return(True)
+        elif (board [0][0] == player and board [0][1] == player and board [0][2] == player ) :
+            return(True)
+        elif (board [1][0] == player and board [1][1] == player and board [1][2] == player ) :
+            return(True)
+        elif (board [2][0] == player and board [2][1] == player and board [2][2] == player ) :
+            return(True)
+        elif (board [0][0] == player and board [1][0] == player and board [2][0] == player ) :
+            return(True)
+        elif (board [1][0] == player and board [1][1] == player and board [2][1] == player ) :
+            return(True)
+        elif (board [2][0] == player and board [2][1] == player and board [2][2] == player ) :
+            return(True)
+
+    def win_verification(self):
+        if self.win_conditions(1) == True :
+            print("")
+        
+        elif self.win_conditions(2) == True :
+            print("")
+        else :
+            print("Personne n'a gagné !")
+
+class Game :
+    Mode = Profils()
+    Résolution = Verification 
+
+Start = Game()
