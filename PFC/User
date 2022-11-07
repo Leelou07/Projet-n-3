@@ -1,34 +1,33 @@
-choices = ["Pierre", "Feuille", "Ciseaux"]
-
-class user : 
+class User : 
     #Initialise
     def __init__(self):
+        self.choices = ["Pierre", "Feuille", "Ciseaux"]
         self.player_1 = self.__pseudo()
-        self.player_choice = self.__choice()
-        
-    
+       
     #Construit
     def __pseudo(self):
         answer = input("Quel est votre pseudo ?")
         print("Votre pseudo est :", answer, ".")
         answer_verif = input("Voulez vous utilisez ce pseudo ? O/N")
+        
         if answer_verif == "O" :
             return answer
         else :
             print("Choisissez un nouveau pseudo")
             self.__pseudo()
 
-    def __choice(self):
-        print("Les coups possibles sont :", choices)
+    def choice(self):
+        print("Les coups possibles sont :", self.choices)
         answer = input("Quel est votre coup ?")
-        if answer in choices :
+        
+        if answer in self.choices :
             True 
             print("Votre coup est :", answer)
             return answer
         else : 
             print("Votre coup n'existe pas !")
-            self.__choice()
+            self.choice()
 
 
-joueur = user()
-
+joueur = User()
+joueur.choice()
