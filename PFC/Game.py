@@ -1,5 +1,5 @@
 #Import
-from player import *
+from Ia import *
 
 class game :
 
@@ -8,6 +8,9 @@ class game :
         self.ia_point = 0
         self.human_point = 0
         self.nb_manche = 0
+        self.choices_manche = [1, 3, 5, 7, 9]
+        self.choix_nbr_manche = self.__choix()
+        
 
     #Fuction point
     def incre_point(self, bool):
@@ -15,9 +18,11 @@ class game :
             self.human_point += 1
         elif(bool != True):
             self.ia_point += 1
+    
     #Fuction nb manche
     def incre_manche(self):
         self.nb_manche += 1
+    
     #Launch fuction
     def launch_game(self):
         print("--------------")
@@ -26,7 +31,19 @@ class game :
         print("-Les intellos-")
         print("--------------")
 
-    #Fuction test eguality
+    #Choix du nombre de manche
+    def __choix(self):
+        print("En combien de manche souhaitez vous jouer ?")
+        answer = input(self.choices_manche)
+        print("Vous souhaitez jouer en", answer, "?")
+        answer_verif = input("O/N")
+        
+        if answer_verif == "O" :
+            return answer 
+        else : 
+            self._choix()
+
+
 
 
 
@@ -62,7 +79,7 @@ player2_class = player('bot')
 game_class = game()
 game_class.launch_game()
 
-while(game_class.nb_manche < 3):
+while(game_class.nb_manche < int(game_class.choix_nbr_manche)):
     a = player_class.choice()
     b = player2_class.choice()
     if(a != b):
