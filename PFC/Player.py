@@ -19,8 +19,10 @@ def check ():
         return("D'accord")
     else :
         print("Votre coup n'est pas valide !")
-        choice
+        choice()
 
-while x == 0 :
-    choice
-    check
+choice()
+
+#while x == 0 :
+    choice()
+    check()
