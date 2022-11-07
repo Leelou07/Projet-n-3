@@ -1,11 +1,53 @@
 class User : 
     #Initialise
     def __init__(self):
-        self.choices = ["Pierre", "Feuille", "Ciseaux"]
-        self.player_1 = self.__pseudo()
-       
-    #Construit
-    def __pseudo(self):
+        self.modes = ["JvsJ", "JvsIa", "IavsIa"] #Liste des modes
+        self.choices = ["Pierre", "Feuille", "Ciseaux"] #Liste coups possibles
+        self.mode = self.__mode()
+        self.mode_verif = self.__mode_verif()
+    
+    '''
+    Choix du mode de jeu 
+    '''
+    def __mode(self):
+        print("Choississez votre mode de jeu en tapant le nom correspondant")
+        answer = input(self.modes)
+        print("Le mode de jeu séléctionné est", answer, ".")
+        answer_verif = input("Etês-vous sûr, O/N")
+
+        if answer_verif == "O" :
+            return answer
+        else :
+            print("Choisissez un nouveau mode")
+            self.__mode()        
+
+    '''
+    Orientation du choix du mode de jeu 
+    '''
+
+    def __mode_verif(self):
+            if self.mode == "JvsJ" :
+                 player_1 = self.pseudo() 
+                 player_2 = self.pseudo()
+                 print("la partie oppose", player_1, "à", player_2, ".")
+
+            elif self.mode == "JvsIa" :
+                player_1 = self.pseudo()
+                player_2 = Ia
+                print("la partie oppose", player_1, "à", player_2, ".")
+
+
+            else :
+                player_1 = Ia
+                player_2 = Ia
+                print("la partie oppose", player_1, "à", player_2, ".")
+
+
+
+    '''
+    Choix du Pseudo
+    '''
+    def pseudo(self):
         answer = input("Quel est votre pseudo ?")
         print("Votre pseudo est :", answer, ".")
         answer_verif = input("Voulez vous utilisez ce pseudo ? O/N")
@@ -15,7 +57,10 @@ class User :
         else :
             print("Choisissez un nouveau pseudo")
             self.__pseudo()
-
+    
+    '''
+    Choix du Coup
+   
     def choice(self):
         print("Les coups possibles sont :", self.choices)
         answer = input("Quel est votre coup ?")
@@ -27,7 +72,7 @@ class User :
         else : 
             print("Votre coup n'existe pas !")
             self.choice()
+    '''
 
-
-joueur = User()
-joueur.choice()
+joueur = User() #Lance la classe
+#joueur.choice() #Lance le choix du Coup
