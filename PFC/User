@@ -33,13 +33,13 @@ class User :
 
             elif self.mode == "JvsIa" :
                 player_1 = self.pseudo()
-                player_2 = Ia
+                player_2 = #Ia
                 print("la partie oppose", player_1, "à", player_2, ".")
 
 
             else :
-                player_1 = Ia
-                player_2 = Ia
+                player_1 = #Ia
+                player_2 = #Ia
                 print("la partie oppose", player_1, "à", player_2, ".")
 
 
