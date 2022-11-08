@@ -32,23 +32,23 @@ class Morpion:
 
     def pchoice(self):
         if self.init == 1:
-            var00 = 1
-        elif self.var_player_choice == 2:
-            var01 = 1
-        elif self.var_player_choice == 3:
-            var02 = 1
-        elif self.var_player_choice == 4:
-            var10 = 1
-        elif self.var_player_choice == 5:
-            var11 = 1
-        elif self.var_player_choice == 6:
-            var12 = 1
-        elif self.var_player_choice == 7:
-            var20 = 1
-        elif self.var_player_choice == 8:
-            var21 = 1
-        elif self.var_player_choice == 9:
-            var22 = 1
+            self.var0 = 1
+        elif self.init == 2:
+            self.var01 = 1
+        elif self.init == 3:
+            self.var02 = 1
+        elif self.init == 4:
+            self.var10 = 1
+        elif self.init == 5:
+            self.var11 = 1
+        elif self.init == 6:
+            self.var12 = 1
+        elif self.init == 7:
+            self.var20 = 1
+        elif self.init == 8:
+            self.var21 = 1
+        elif self.init == 9:
+            self.var22 = 1
         
 
 star = Morpion()
