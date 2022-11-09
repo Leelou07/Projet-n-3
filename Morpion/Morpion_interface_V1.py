@@ -74,6 +74,7 @@ def callback():
 	else :
 		showerror('Fin du jeu', 'Au revoir !')
 		window.destroy()
+		
 #click event
 def click(event):
 	global game
