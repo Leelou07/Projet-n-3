@@ -1,5 +1,5 @@
 from Player import *
-from Ia import *
+
 #Création de la classe
 class Game :
     '''
