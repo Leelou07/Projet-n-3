@@ -1,5 +1,6 @@
 from tkinter import Tk, Canvas
 import random
+from tkinter.messagebox import askyesno, showerror, showinfo, showwarning
 
 #gril
 game = [[0,1,2],[0,1,2],[0,1,2]]
@@ -57,6 +58,12 @@ def affiche():
 	gril()
 	pions()
 
+def callback():
+	if askyesno('Fin du jeu', 'Voulez-vous rejouer ?'):
+		print("")
+	else :
+		showerror('Fin du jeu', 'Au revoir !')
+		window.destroy()
 #click event
 def click(event):
 	global game
@@ -76,7 +83,8 @@ def click(event):
 	pions()
 	if DetectWin() == 1:
 		gril("blue")
-		return
+		callback()
+		
 
 #computer player 
 	calcul = SearchEmptyCases()
