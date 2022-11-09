@@ -5,6 +5,9 @@ class User :
         self.choices = ["Pierre", "Feuille", "Ciseaux"] #Liste coups possibles
         self.mode = self.__mode()
         self.mode_verif = self.__mode_verif()
+        self.player_1_name = self.player_1
+        self.player_2_name = self.player_2
+        print("La partie oppose", self.player_1_name, "à", self.player_2_name)
     
     '''
     Choix du mode de jeu 
@@ -27,21 +30,21 @@ class User :
 
     def __mode_verif(self):
             if self.mode == "JvsJ" :
-                 player_1 = self.pseudo() 
-                 player_2 = self.pseudo()
-                 print("la partie oppose", player_1, "à", player_2, ".")
-
+                 self.player_1 = self.pseudo() 
+                 self.player_2 = self.pseudo()
+                 return self.player_1, self.player_2
+            '''
             elif self.mode == "JvsIa" :
-                player_1 = self.pseudo()
-                player_2 = #Ia
-                print("la partie oppose", player_1, "à", player_2, ".")
+                self.player_1 = self.pseudo()
+                self.player_2 = #Ia
+                return self.player_1, self.player_2
 
 
             else :
-                player_1 = #Ia
-                player_2 = #Ia
-                print("la partie oppose", player_1, "à", player_2, ".")
-
+                self.player_1 = #Ia
+                self.player_2 = #Ia
+                return self.player_1, self.player_2
+            '''
 
 
     '''
@@ -56,7 +59,7 @@ class User :
             return answer
         else :
             print("Choisissez un nouveau pseudo")
-            self.__pseudo()
+            self.pseudo()
     
     '''
     Choix du Coup
