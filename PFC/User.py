@@ -21,6 +21,8 @@ class User :
         if answer_verif == "O" :
             return answer
         else :
+            if answer_verif != "N" :
+                print("Répone invalide")
             print("Choisissez un nouveau mode")
             self.__mode()        
 
@@ -58,6 +60,8 @@ class User :
         if answer_verif == "O" :
             return answer
         else :
+            if answer_verif != "N" :
+                print("Répone invalide")
             print("Choisissez un nouveau pseudo")
             self.pseudo()
     
