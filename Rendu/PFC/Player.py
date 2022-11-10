@@ -1,7 +1,7 @@
 '''Importation of random modul for later use'''
 import random
 
-"""Creation of a class named  "Player"""
+"""Creation of a class named  "Player" """
 class Player :
     
     '''
@@ -229,4 +229,3 @@ class Player :
         
         elif(self.c_stat >= 100):
             self.c_stat = 100
-        
